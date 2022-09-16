@@ -5,3 +5,5 @@ matplotlib
 numpy
 seaborn
 gunicorn
+xgboost
+catboost
