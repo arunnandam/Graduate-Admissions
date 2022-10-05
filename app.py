@@ -20,7 +20,7 @@ model = pickle.load(open('model.pkl','rb'))
 @app.route('/predict',methods=['POST'])
 def predict():
     data = [float(x) for x in request.form.values()]
-    print(data)
+    #print(data)
     transformed_data = scaler.transform(np.array(list(data)).reshape(1,-1))
     output = model.predict(transformed_data)
     output = "Admit chance: " + str(round(output[0]*100,3)) + '%'
