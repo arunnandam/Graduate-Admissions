@@ -1,6 +1,45 @@
 <!DOCTYPE html>
 <html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
 <body>
-<h1>Check your chance of Admit</h1>
+ <div class="login">
+	<h1>Graduate Admissions Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="GRE Score" placeholder="GRE Score" required="required" /><br>
+    	<input type="text" name="TOEFL Score" placeholder="TOEFL Score" required="required" /><br>
+        <input type="text" name="University Rating" placeholder="University Rating" required="required" /><br>
+        <input type="text" name="SOP" placeholder="SOP" required="required" /><br>
+        <input type="text" name="LOR" placeholder="LOR" required="required" /><br>
+        <input type="text" name="CGPA" placeholder="CGPA" required="required" /><br>
+        <input type="text" name="Research" placeholder="Research" required="required" /><br>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
 </body>
 </html>
+
+
+
+

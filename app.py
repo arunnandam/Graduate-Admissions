@@ -19,11 +19,12 @@ model = pickle.load(open('model.pkl','rb'))
 # Give Predictions using Postman(API testing application)
 @app.route('/predict',methods=['POST'])
 def predict():
-    data = request.json['data']
-    transformed_data = scaler.transform(np.array(list(data.values())).reshape(1,-1))
+    data = [float(x) for x in request.form.values()]
+    print(data)
+    transformed_data = scaler.transform(np.array(list(data)).reshape(1,-1))
     output = model.predict(transformed_data)
     output = "Admit chance: " + str(round(output[0]*100,3)) + '%'
-    return jsonify(output)
+    return render_template('home.html', prediction_text = "The house price for the {}".format(output))
 
 # App run start here. Initialize the app
 if __name__=="__main__":
