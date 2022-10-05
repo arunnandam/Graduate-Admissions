@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Data
-*.csv
+admission_data.csv
 
 # ignore folder
-catboost_info/
+catboost_info
