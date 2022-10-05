@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Data
+*.csv
+
+# ignore folder
+catboost_info/
